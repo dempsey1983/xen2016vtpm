@@ -56,6 +56,7 @@
 
 #if defined(__i386__) || defined(__x86_64__)
 
+#define HVM_PARAM_STUBDOM_VTPM 8
 /*
  * Viridian enlightenments
  *

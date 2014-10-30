@@ -5696,6 +5696,9 @@ long do_hvm_op(unsigned long op, XEN_GUEST_HANDLE_PARAM(void) arg)
 
                 break;
             }
+            case HVM_PARAM_STUBDOM_VTPM:
+                rc = 0;
+                break;
             }
 
             if ( rc == 0 ) 

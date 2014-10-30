@@ -291,6 +291,8 @@ static void hvm_set_conf_params(xc_interface *handle, uint32_t domid,
 #if defined(__i386__) || defined(__x86_64__)
     xc_hvm_param_set(handle, domid, HVM_PARAM_HPET_ENABLED,
                     libxl_defbool_val(info->u.hvm.hpet));
+    xc_set_hvm_param(handle, domid, HVM_PARAM_STUBDOM_VTPM,
+                     info->num_vtpms);
 #endif
     xc_hvm_param_set(handle, domid, HVM_PARAM_TIMER_MODE, timer_mode(info));
     xc_hvm_param_set(handle, domid, HVM_PARAM_VPT_ALIGN,
